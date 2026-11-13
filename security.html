@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How subbr protects you</title>
+<meta name="description" content="The security design of subbr: encryption, hiding, and honest limits.">
+<style>
+  :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
+  @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:48px 20px 64px; }
+  .brand { color:var(--accent); font-weight:800; letter-spacing:.08em; margin:0; }
+  h1 { font-size:2.1rem; line-height:1.2; margin:.2em 0 .4em; }
+  h2 { font-size:1.25rem; margin:2.2em 0 .4em; }
+  p, li { color:var(--muted); }
+  strong { color:var(--text); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
+  a { color:var(--accent); }
+  .lead { font-size:1.1rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
+  .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
+  footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
+  table { width:100%; border-collapse:collapse; margin:.6em 0 1em; font-size:.95rem; }
+  td, th { text-align:left; vertical-align:top; padding:6px 8px; border-top:1px solid var(--line); color:var(--muted); }
+  th { color:var(--text); }
+  code { font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+  <p class="brand"><a href="./" style="text-decoration:none">subbr</a></p>
+  <h1>How subbr protects you</h1>
+  <p class="lead">What subbr protects, how, and where its limits are. The first part is for everyone; the details below are for people who want to check our work.</p>
+
+  <section>
+    <h2>In plain words</h2>
+    <ul>
+      <li><strong>Only your friend can read your message.</strong> It is encrypted on your phone with a key only your friend’s phone can recreate. Not the app that carries it, not us, not anyone who copies it.</li>
+      <li><strong>People see something ordinary.</strong> The encrypted message is hidden inside a normal sentence, photo or short video. Someone reading over your shoulder, or scrolling your chat, sees nothing unusual.</li>
+      <li><strong>Your phone keeps everything, locked.</strong> Contacts, keys and chats are encrypted on your phone and opened only with your PIN or fingerprint.</li>
+      <li><strong>No server holds your secrets.</strong> There is no account and no message server. Messages travel only through the apps you already use.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What subbr does not promise</h2>
+    <ul>
+      <li><strong>Hidden from people, not from forensic software.</strong> Text hiding uses invisible characters: a tool that shows them can tell a message is there, though not what it says. Photos and videos change in small, repeated ways that specialist software can detect. It still can’t read them. We never call it “undetectable”.</li>
+      <li><strong>Someone who unlocks your subbr sees your chat history.</strong> Your PIN, auto-lock, message timers and the history limit reduce that.</li>
+      <li><strong>No forward secrecy against a stolen, unlocked phone.</strong> If someone gets your friend’s phone and can unlock subbr, they can read messages sent to it.</li>
+      <li><strong>Who talks to whom.</strong> The carrying app still knows that you sent your friend a sentence or a photo. subbr hides the content, not the fact that you are in touch.</li>
+      <li><strong>A forgotten PIN can’t be recovered.</strong> There is no back door, for us or anyone. You reinstall and start again.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Encryption</h2>
+    <table>
+      <tr><th>Part</th><th>Design</th></tr>
+      <tr><td>Library</td><td>libsodium (and @noble/curves for X25519 and signature checks)</td></tr>
+      <tr><td>Cipher</td><td>XChaCha20-Poly1305 (AEAD); the message header is authenticated as associated data</td></tr>
+      <tr><td>Contacts</td><td>Each phone has an X25519 key pair; the private key never leaves the phone. Every message uses a fresh ephemeral key. Message key = BLAKE2b-256 over both X25519 results (ephemeral–recipient and sender–recipient) and the three public keys, with a context string. Only the recipient can decrypt, and they know which contact sent it.</td></tr>
+      <tr><td>Sealed sender</td><td>The sender’s public key travels encrypted to the recipient (48 bytes), so no one else learns who sent a message. A forged sender is rejected, because the body key also needs the real sender’s secret.</td></tr>
+      <tr><td>Passwords</td><td>Argon2id (64 MiB, 3 passes; 32 MiB on low-memory phones) with a new random salt and nonce for every message; passwords are Unicode-normalised first.</td></tr>
+      <tr><td>Length</td><td>Messages are compressed, then padded to fixed size buckets so their length is not revealed.</td></tr>
+      <tr><td>Who it’s for</td><td>No recipient identifier is in the message.</td></tr>
+    </table>
+    <p>Known limit: X25519 public keys are not perfectly random-looking. They sit inside hidden data either way; encoding them to look random (Elligator2) may come later.</p>
+  </section>
+
+  <section>
+    <h2>Hiding</h2>
+    <table>
+      <tr><td>Text</td><td>The encrypted bytes become invisible Unicode characters spread between the words of a cover sentence, with a checksum and Reed-Solomon error correction. Character sets avoid joiners in scripts where they change how text looks.</td></tr>
+      <tr><td>Photos sent as photos</td><td>Spread-transform dither modulation on low-frequency DCT coefficients of the brightness, at positions and signs chosen by a key only the two phones share, with soft-decision Reed-Solomon. Built to survive recompression and resizing by messaging apps; checked by recompressing before it is sent.</td></tr>
+      <tr><td>Photos sent as files</td><td>Adaptive ±1 embedding (HILL cost function with syndrome-trellis codes) in a PNG, at keyed positions, using at most 20% of capacity. Without the key, a tool that knows the format can’t tell an image with a message from one without.</td></tr>
+      <tr><td>Videos</td><td>The same robust method across frames, at a reduced frame rate.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>On your phone</h2>
+    <ul>
+      <li><strong>PIN:</strong> never stored, not even as a hash. It unlocks the vault key: key = BLAKE2b-256(Argon2id(PIN, salt) ‖ a random 256-bit secret in the Android Keystore). Copying the app’s files is useless without that hardware-held secret, and each PIN guess costs an Argon2id run. After 5 wrong PINs, waits grow from 30 seconds to an hour.</li>
+      <li><strong>Vault and history:</strong> encrypted with XChaCha20-Poly1305 under a random 256-bit key; each chat is its own encrypted blob, bound to that chat. Excluded from backups.</li>
+      <li><strong>Fingerprint unlock:</strong> a second copy of the vault key behind a biometric-only Keystore item; it turns off if new fingerprints are enrolled.</li>
+      <li><strong>Screen:</strong> screenshots and the recent-apps preview are blocked. On Android 14 and later, apps with accessibility access can’t read subbr’s screen (screen readers still work).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The subscription check</h2>
+    <p>The only server is a small Cloudflare Worker. The app sends it a Google Play purchase token, the product id and a random install id. The Worker asks Google, signs the answer with Ed25519 and stores nothing; the app checks the signature with a public key built into the app. No message content, contact or key ever reaches it.</p>
+  </section>
+
+  <p>Found a problem? Please <a href="https://github.com/mypttwo/subbr/issues">tell us</a>. See also the <a href="privacy.html">privacy policy</a>.</p>
+  <footer>
+    <p>Questions or problems: <a href="https://github.com/mypttwo/subbr/issues">open an issue on GitHub</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>subbr: privacy policy</title>
+<meta name="description" content="What the subbr app does with data: almost nothing leaves your phone.">
+<style>
+  :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
+  @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:48px 20px 64px; }
+  .brand { color:var(--accent); font-weight:800; letter-spacing:.08em; margin:0; }
+  h1 { font-size:2.1rem; line-height:1.2; margin:.2em 0 .4em; }
+  h2 { font-size:1.25rem; margin:2.2em 0 .4em; }
+  p, li { color:var(--muted); }
+  strong { color:var(--text); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
+  a { color:var(--accent); }
+  .lead { font-size:1.1rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
+  .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
+  footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
+  table { width:100%; border-collapse:collapse; margin:.6em 0 1em; font-size:.95rem; }
+  td, th { text-align:left; vertical-align:top; padding:6px 8px; border-top:1px solid var(--line); color:var(--muted); }
+  th { color:var(--text); }
+  code { font-size:.9em; }
+</style>
+</head>
+<body>
+<main>
+  <p class="brand"><a href="./" style="text-decoration:none">subbr</a></p>
+  <h1>Privacy policy</h1>
+  <p class="lead">subbr is built so that we can’t see your messages, your contacts or who you talk to. This page explains exactly what the app does with data.</p>
+  <p>Effective: [date of the Google Play release]. Applies to the subbr app for Android.</p>
+
+  <section>
+    <h2>The short version</h2>
+    <ul>
+      <li><strong>No account.</strong> No phone number, email or name is collected. The name you type is only shown to friends you invite.</li>
+      <li><strong>Your messages, contacts, passwords and chats stay on your phone</strong>, encrypted and locked with your PIN. We have no copy and no way to get one.</li>
+      <li><strong>No analytics, no ads, no tracking, no crash reporting.</strong></li>
+      <li><strong>The only thing subbr ever sends to us</strong> is your Google Play purchase receipt, to check that your subscription is active. We don’t keep it.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What stays on your phone</h2>
+    <p>Your secret key, your contacts, the passwords you save, your chat history and your settings. All of it is encrypted with a key that is unlocked by your PIN together with a secret held in your phone’s secure hardware. It is not included in Android backups and is never uploaded. If you uninstall subbr or use Reset app, it is gone for good.</p>
+    <p>Photos and videos you pick to hide a message in are processed on your phone. A photo or video you have just sent stays in the app’s private storage only while that chat is open, then it is deleted.</p>
+  </section>
+
+  <section>
+    <h2>What leaves your phone, and where it goes</h2>
+    <table>
+      <tr><th>What</th><th>Where</th><th>Why</th></tr>
+      <tr><td>Messages you send</td><td>The app you choose (for example WhatsApp, Telegram or email)</td><td>subbr hands them over hidden and encrypted. That app sees an ordinary sentence, photo or video, never your message. Its own privacy policy applies to what it carries.</td></tr>
+      <tr><td>Invite links you choose to send</td><td>The app you send it with, then Google Play when your friend opens it</td><td>The link carries your public key (not secret), the name you chose and, if you wrote one, a short first message. That first message is <strong>not</strong> secret: anyone who has the invite can read it. subbr says so where you write it.</td></tr>
+      <tr><td>Your Google Play purchase receipt (purchase token), a random number made by this install, and the product you bought</td><td>Our subscription check service, which runs on Cloudflare, and from there Google</td><td>To confirm your subscription is active. The service asks Google, sends back a signed answer, and stores nothing. Request logging is turned off. As with any website, Cloudflare handles your IP address to deliver the request and to stop abuse.</td></tr>
+      <tr><td>Payment</td><td>Google Play</td><td>Google handles the purchase. subbr never sees your payment details.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Permissions</h2>
+    <ul>
+      <li><strong>Camera:</strong> only to scan a friend’s QR code. Nothing is recorded or stored.</li>
+      <li><strong>Fingerprint or face:</strong> only if you turn on biometric unlock. Your phone checks it; subbr never sees it.</li>
+      <li><strong>Internet:</strong> only for the subscription check.</li>
+      <li><strong>Photos and videos:</strong> subbr has no access to your gallery. You pick a single photo or video with Android’s own picker.</li>
+      <li><strong>Clipboard:</strong> read only when you tap Paste. Passwords you copy are cleared from the clipboard after 60 seconds.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>subbr is meant for adults (18 and over) and is not directed at children.</p>
+  </section>
+
+  <section>
+    <h2>Your choices</h2>
+    <p>Everything subbr knows about you is on your phone, under your control. To delete it, use Settings → Reset app, or uninstall subbr. There is nothing on our side to delete. To cancel a subscription, use Google Play → Payments &amp; subscriptions.</p>
+  </section>
+
+  <section>
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new date. If a change affects what leaves your phone, the app will tell you before it happens.</p>
+  </section>
+
+  <p><a href="security.html">How subbr protects you</a> explains the technical design.</p>
+  <footer>
+    <p>Questions or problems: <a href="https://github.com/mypttwo/subbr/issues">open an issue on GitHub</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
