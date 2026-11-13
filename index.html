@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>subbr: secret messages that travel through any app</title>
-<meta name="description" content="subbr hides encrypted messages inside ordinary text, photos and videos, so they can travel through WhatsApp, Telegram, email or any app.">
+<title>subbr: one contact, one conversation, any app</title>
+<meta name="description" content="One contact. One conversation. Any app. And no one can tell. subbr keeps your chats with a friend in one place, encrypted and hidden inside ordinary messages.">
 <style>
   :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
   @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
@@ -18,21 +18,45 @@
   strong { color:var(--text); }
   section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
   a { color:var(--accent); }
+  .lead { font-size:1.1rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
+  .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
   footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
 </style>
 </head>
 <body>
 <main>
   <p class="brand">subbr</p>
-  <h1>Secret messages that travel through any app</h1>
-  <p>subbr encrypts a message and hides it inside something ordinary: a harmless sentence, a photo or a short video. You send that through the apps you already use, such as WhatsApp, Telegram or email. Everyone else sees the ordinary message. Your friend's subbr reveals the secret.</p>
+  <h1>One contact. One conversation. Any app.<br>And no one can tell.</h1>
+  <p class="lead">Talk to a friend through whatever app you like: WhatsApp today, Telegram tomorrow, email next week. subbr keeps it all in one conversation, encrypted and hidden inside ordinary messages.</p>
+
+  <div class="grid">
+    <div class="tile">
+      <h3>One contact, one conversation</h3>
+      <p>Everything you and a friend send each other lands in one chat in subbr, whichever app it travelled through. One place to read it all.</p>
+    </div>
+    <div class="tile">
+      <h3>Any app</h3>
+      <p>subbr hands your message to the app you choose, and you pick again any time. It works with the apps you and your friends already use.</p>
+    </div>
+    <div class="tile">
+      <h3>No one can tell</h3>
+      <p>Your message is encrypted and hidden inside a harmless sentence, a photo or a short video. Everyone else sees something ordinary. Only your friend's subbr can reveal it.</p>
+    </div>
+  </div>
+
+  <section id="pronounce">
+    <h2>How do you say “subbr”?</h2>
+    <p>Say it like <strong>“subber”</strong> (SUB-er). It comes from <strong>subliminal</strong>: a message that sits under the surface, there for the one person meant to see it.</p>
+  </section>
 
   <section id="how">
     <h2>How it works</h2>
     <ul>
-      <li><strong>Add a friend once.</strong> Scan each other's QR code, or send an invite link. Each phone keeps its own key; no password has to be shared.</li>
+      <li><strong>Add a friend once.</strong> Scan each other's QR code, or send an invite link. Each phone keeps its own key, so no password has to be shared.</li>
       <li><strong>Write and send.</strong> subbr hides the message and hands it to the app you choose.</li>
-      <li><strong>Read.</strong> Your friend copies the message, or shares the photo or video to subbr, and reads it there.</li>
+      <li><strong>Read.</strong> Your friend copies the message, or shares the photo or video to subbr, and reads it in your conversation.</li>
     </ul>
   </section>
 
