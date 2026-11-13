@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How subbr protects you</title>
-<meta name="description" content="The security design of subbr: encryption, hiding, and honest limits.">
+<title>How Subber protects you</title>
+<meta name="description" content="The security design of Subber: encryption, hiding, and honest limits.">
 <style>
   :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
   @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
@@ -31,9 +31,9 @@
 </head>
 <body>
 <main>
-  <p class="brand"><a href="./" style="text-decoration:none">subbr</a></p>
-  <h1>How subbr protects you</h1>
-  <p class="lead">What subbr protects, how, and where its limits are. The first part is for everyone; the details below are for people who want to check our work.</p>
+  <p class="brand"><a href="./" style="text-decoration:none">Subber</a></p>
+  <h1>How Subber protects you</h1>
+  <p class="lead">What Subber protects, how, and where its limits are. The first part is for everyone; the details below are for people who want to check our work.</p>
 
   <section>
     <h2>In plain words</h2>
@@ -46,12 +46,12 @@
   </section>
 
   <section>
-    <h2>What subbr does not promise</h2>
+    <h2>What Subber does not promise</h2>
     <ul>
       <li><strong>Hidden from people, not from forensic software.</strong> Text hiding uses invisible characters: a tool that shows them can tell a message is there, though not what it says. Photos and videos change in small, repeated ways that specialist software can detect. It still can’t read them. We never call it “undetectable”.</li>
-      <li><strong>Someone who unlocks your subbr sees your chat history.</strong> Your PIN, auto-lock, message timers and the history limit reduce that.</li>
-      <li><strong>No forward secrecy against a stolen, unlocked phone.</strong> If someone gets your friend’s phone and can unlock subbr, they can read messages sent to it.</li>
-      <li><strong>Who talks to whom.</strong> The carrying app still knows that you sent your friend a sentence or a photo. subbr hides the content, not the fact that you are in touch.</li>
+      <li><strong>Someone who unlocks your Subber sees your chat history.</strong> Your PIN, auto-lock, message timers and the history limit reduce that.</li>
+      <li><strong>No forward secrecy against a stolen, unlocked phone.</strong> If someone gets your friend’s phone and can unlock Subber, they can read messages sent to it.</li>
+      <li><strong>Who talks to whom.</strong> The carrying app still knows that you sent your friend a sentence or a photo. Subber hides the content, not the fact that you are in touch.</li>
       <li><strong>A forgotten PIN can’t be recovered.</strong> There is no back door, for us or anyone. You reinstall and start again.</li>
     </ul>
   </section>
@@ -87,7 +87,7 @@
       <li><strong>PIN:</strong> never stored, not even as a hash. It unlocks the vault key: key = BLAKE2b-256(Argon2id(PIN, salt) ‖ a random 256-bit secret in the Android Keystore). Copying the app’s files is useless without that hardware-held secret, and each PIN guess costs an Argon2id run. After 5 wrong PINs, waits grow from 30 seconds to an hour.</li>
       <li><strong>Vault and history:</strong> encrypted with XChaCha20-Poly1305 under a random 256-bit key; each chat is its own encrypted blob, bound to that chat. Excluded from backups.</li>
       <li><strong>Fingerprint unlock:</strong> a second copy of the vault key behind a biometric-only Keystore item; it turns off if new fingerprints are enrolled.</li>
-      <li><strong>Screen:</strong> screenshots and the recent-apps preview are blocked. On Android 14 and later, apps with accessibility access can’t read subbr’s screen (screen readers still work).</li>
+      <li><strong>Screen:</strong> screenshots and the recent-apps preview are blocked. On Android 14 and later, apps with accessibility access can’t read Subber’s screen (screen readers still work).</li>
     </ul>
   </section>
 
