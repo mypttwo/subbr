@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>subbr: one contact, one conversation, any app</title>
-<meta name="description" content="One contact. One conversation. Any app. And no one can tell. subbr keeps your chats with a friend in one place, encrypted and hidden inside ordinary messages.">
+<title>subbr: hide a message in plain sight</title>
+<meta name="description" content="Hide a private message inside an ordinary sentence, photo or video, and send it with any app. Only a friend with the password can reveal it. Free, no account, no internet access.">
 <style>
   :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
   @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
@@ -23,62 +23,70 @@
   .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
   .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
   footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
+  nav a { margin-right:16px; }
 </style>
 </head>
 <body>
 <main>
   <p class="brand">subbr</p>
-  <h1>One contact. One conversation. Any app.<br>And no one can tell.</h1>
-  <p class="lead">Talk to a friend through whatever app you like: WhatsApp today, Telegram tomorrow, email next week. subbr keeps it all in one conversation, encrypted and hidden inside ordinary messages.</p>
+  <h1>Hide a message in plain sight.</h1>
+  <p class="lead">subbr puts a private message inside an ordinary sentence, photo or video. Send it with any app you like. Everyone else sees something ordinary; only a friend with your shared password can reveal it.</p>
 
   <div class="grid">
     <div class="tile">
-      <h3>One contact, one conversation</h3>
-      <p>Everything you and a friend send each other lands in one chat in subbr, whichever app it travelled through. One place to read it all.</p>
+      <h3>Looks ordinary</h3>
+      <p>“See you Saturday at noon” can carry a completely different message. So can a holiday photo or a short video.</p>
     </div>
     <div class="tile">
       <h3>Any app</h3>
-      <p>subbr hands your message to the app you choose, and you pick again any time. It works with the apps you and your friends already use.</p>
+      <p>WhatsApp, Telegram, email, SMS: subbr hands the result to the app you choose, or straight to your friend's chat.</p>
     </div>
     <div class="tile">
-      <h3>No one can tell</h3>
-      <p>Your message is encrypted and hidden inside a harmless sentence, a photo or a short video. Everyone else sees something ordinary. Only your friend's subbr can reveal it.</p>
+      <h3>Nothing leaves your phone</h3>
+      <p>No account, no internet access, no ads, no tracking. subbr can't send anything anywhere on its own.</p>
     </div>
   </div>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <ul>
+      <li><strong>Add a friend once.</strong> Together: one phone shows a QR code, the other scans it. Apart: you both type the same password, agreed on a call or in person.</li>
+      <li><strong>Hide.</strong> Type your secret, choose the friend, and hide it in a sentence, a photo or a video. Optionally set a self-destruct timer.</li>
+      <li><strong>Send.</strong> Share it with any app, or straight to your friend's WhatsApp, Telegram or email.</li>
+      <li><strong>Reveal.</strong> Your friend copies the text, or shares the photo or video to subbr. subbr tries their saved passwords and shows the secret.</li>
+    </ul>
+  </section>
+
+  <section id="help">
+    <h2>Help</h2>
+    <p><strong>How do I reveal a message?</strong><br>Text: copy the whole message and tap <em>Reveal from clipboard</em>, or select it and choose <em>Reveal with subbr</em>. Photo or video: share it to subbr from WhatsApp, Telegram or your gallery.</p>
+    <p><strong>It says “None of your saved passwords opens this”.</strong><br>The message was hidden with a password you haven't saved. Enter it once; subbr can save it as a friend.</p>
+    <p><strong>It says the message was damaged.</strong><br>Part of it was lost, usually because only part of the text was copied. Copy the whole message and try again.</p>
+    <p><strong>What do the timers do?</strong><br><em>Show for</em> 10 s, 30 s or 1 min: the secret disappears after that and opens only once. <em>Open once</em>: it can be revealed a single time. <em>Expires</em> in 1 hour, 1 day or 1 week: after that it won't open. The timer works in subbr on your friend's phone; the hidden message itself stays in the chat.</p>
+    <p><strong>Quick or full-quality video?</strong><br>Quick keeps up to 15 seconds at 15 frames a second and is ready in seconds. Full quality keeps up to 60 seconds at the full frame rate and takes about as long as the video, or longer.</p>
+    <p><strong>Can I lock subbr?</strong><br>Yes: Settings → <em>Lock with fingerprint, face or screen lock</em>. It's off by default.</p>
+    <p><strong>Which languages?</strong><br>English, Arabic and Spanish. subbr follows your phone's language, or choose one in Settings.</p>
+  </section>
 
   <section id="pronounce">
     <h2>How do you say “subbr”?</h2>
     <p>Say it like <strong>“subber”</strong> (SUB-er). It comes from <strong>subliminal</strong>: a message that sits under the surface, there for the one person meant to see it.</p>
   </section>
 
-  <section id="how">
-    <h2>How it works</h2>
-    <ul>
-      <li><strong>Add a friend once.</strong> Scan each other's QR code, or send an invite link. Each phone keeps its own key, so no password has to be shared.</li>
-      <li><strong>Write and send.</strong> subbr hides the message and hands it to the app you choose.</li>
-      <li><strong>Read.</strong> Your friend copies the message, or shares the photo or video to subbr, and reads it in your conversation.</li>
-    </ul>
-  </section>
-
   <section id="privacy">
-    <h2>Privacy</h2>
+    <h2>Privacy in short</h2>
     <ul>
-      <li><strong>No account, no phone number, no email.</strong></li>
-      <li><strong>No subbr server sees your messages.</strong> They travel only through the apps you choose, hidden and encrypted.</li>
-      <li><strong>Your key, contacts and chats stay on your phone</strong>, encrypted and locked with your PIN.</li>
+      <li><strong>No account</strong>, no phone number, no email.</li>
+      <li><strong>No internet permission:</strong> subbr has no way to send anything anywhere.</li>
+      <li><strong>Your friends, passwords and history stay on your phone</strong>, encrypted.</li>
       <li><strong>No analytics, no ads, no tracking.</strong></li>
-      <li>The camera is used only to scan QR codes.</li>
     </ul>
-    <p>Read the full <a href="privacy.html">privacy policy</a> and <a href="security.html">how subbr protects you</a>.</p>
-  </section>
-
-  <section id="trademarks">
-    <h2>Trademarks and credits</h2>
-    <p>WhatsApp is a trademark of WhatsApp LLC. Telegram is a trademark of Telegram FZ-LLC. Other app names belong to their owners. subbr is not affiliated with, endorsed by or sponsored by any of them. App icons inside subbr are drawn by your own phone; subbr does not ship them.</p>
-    <p>Icons: <a href="https://feathericons.com">Feather</a> (MIT licence) and <a href="https://lucide.dev">Lucide</a> (ISC licence).</p>
+    <p>Read the <a href="privacy.html">privacy policy</a> and <a href="security.html">how subbr protects you</a>.</p>
   </section>
 
   <footer>
+    <p><a href="./">Home</a> · <a href="privacy.html">Privacy policy</a> · <a href="security.html">How subbr protects you</a></p>
+    <p>WhatsApp is a trademark of WhatsApp LLC. Telegram is a trademark of Telegram FZ-LLC. Other app names belong to their owners. subbr is not affiliated with, endorsed by or sponsored by any of them. Icons: <a href="https://feathericons.com">Feather</a> (MIT licence) and <a href="https://lucide.dev">Lucide</a> (ISC licence).</p>
     <p>Questions or problems: <a href="https://github.com/mypttwo/subbr/issues">open an issue on GitHub</a>.</p>
   </footer>
 </main>
