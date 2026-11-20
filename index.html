@@ -3,14 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>subbr: one contact, one conversation, any app</title>
-<meta name="description" content="One contact. One conversation. Any app. And no one can tell. subbr keeps your chats with a friend in one place, encrypted and hidden inside ordinary messages.">
+<title>subbr: hide a secret in plain sight</title>
+<meta name="description" content="Hide a private message inside an ordinary sentence, photo or video, and send it with any app. Only your friend can reveal it.">
+<link rel="canonical" href="https://mypttwo.github.io/subbr/">
+<link rel="alternate" hreflang="en" href="https://mypttwo.github.io/subbr/">
+<link rel="alternate" hreflang="ar" href="https://mypttwo.github.io/subbr/ar/">
+<link rel="alternate" hreflang="es" href="https://mypttwo.github.io/subbr/es/">
+<link rel="alternate" hreflang="hi" href="https://mypttwo.github.io/subbr/hi/">
+<link rel="alternate" hreflang="id" href="https://mypttwo.github.io/subbr/id/">
+<link rel="alternate" hreflang="x-default" href="https://mypttwo.github.io/subbr/">
 <style>
   :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
   @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:48px 20px 64px; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Arabic","Noto Sans Devanagari",sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:28px 20px 64px; }
+  nav { display:flex; flex-wrap:wrap; gap:6px 16px; font-size:.92rem; margin-bottom:28px; }
+  nav a { color:var(--muted); text-decoration:none; }
+  nav a[aria-current] { color:var(--text); font-weight:700; }
   .brand { color:var(--accent); font-weight:800; letter-spacing:.08em; margin:0; }
   h1 { font-size:2.1rem; line-height:1.2; margin:.2em 0 .4em; }
   h2 { font-size:1.25rem; margin:2.2em 0 .4em; }
@@ -27,22 +37,23 @@
 </head>
 <body>
 <main>
+  <nav><a href="" hreflang="en" lang="en" aria-current="page">English</a> <a href="ar/" hreflang="ar" lang="ar">العربية</a> <a href="es/" hreflang="es" lang="es">Español</a> <a href="hi/" hreflang="hi" lang="hi">हिन्दी</a> <a href="id/" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
   <p class="brand">subbr</p>
-  <h1>One contact. One conversation. Any app.<br>And no one can tell.</h1>
-  <p class="lead">Talk to a friend through whatever app you like: WhatsApp today, Telegram tomorrow, email next week. subbr keeps it all in one conversation, encrypted and hidden inside ordinary messages.</p>
+  <h1>Hide a secret in plain sight.</h1>
+  <p class="lead">subbr hides a private message inside something ordinary: a sentence, a photo or a short video. Send it with any app you like. Everyone else sees an everyday message; only your friend can reveal it.</p>
 
   <div class="grid">
     <div class="tile">
-      <h3>One contact, one conversation</h3>
-      <p>Everything you and a friend send each other lands in one chat in subbr, whichever app it travelled through. One place to read it all.</p>
+      <h3>Text, photos and videos</h3>
+      <p>Hide your message in an everyday sentence, a photo or a short video. Photos survive WhatsApp’s compression.</p>
     </div>
     <div class="tile">
       <h3>Any app</h3>
-      <p>subbr hands your message to the app you choose, and you pick again any time. It works with the apps you and your friends already use.</p>
+      <p>Send it with WhatsApp, Telegram, email or any app you already use, or straight to your friend’s chat.</p>
     </div>
     <div class="tile">
-      <h3>No one can tell</h3>
-      <p>Your message is encrypted and hidden inside a harmless sentence, a photo or a short video. Everyone else sees something ordinary. Only your friend's subbr can reveal it.</p>
+      <h3>Only your friend can read it</h3>
+      <p>The message is encrypted with a password you share with your friend. Without it, no one can read it.</p>
     </div>
   </div>
 
@@ -54,28 +65,35 @@
   <section id="how">
     <h2>How it works</h2>
     <ul>
-      <li><strong>Add a friend once.</strong> Scan each other's QR code, or send an invite link. Each phone keeps its own key, so no password has to be shared.</li>
-      <li><strong>Write and send.</strong> subbr hides the message and hands it to the app you choose.</li>
-      <li><strong>Read.</strong> Your friend copies the message, or shares the photo or video to subbr, and reads it in your conversation.</li>
+      <li><strong>Add a friend once.</strong> Scan each other’s QR code when you’re together, or both type the same password when you’re apart.</li>
+      <li><strong>Hide.</strong> Type your secret, pick the friend, and hide it in a sentence, a photo or a video.</li>
+      <li><strong>Send.</strong> Send it with any app, or straight to your friend’s chat.</li>
+      <li><strong>Reveal.</strong> Your friend copies the text, or shares the photo or video to subbr, and the secret appears.</li>
     </ul>
+  </section>
+
+  <section id="timers">
+    <h2>Self-destruct timers</h2>
+    <p>Show a message for 10 seconds, 30 seconds or a minute; let it open only once; or make it expire after an hour, a day or a week.</p>
   </section>
 
   <section id="privacy">
     <h2>Privacy</h2>
     <ul>
-      <li><strong>No account, no phone number, no email.</strong></li>
-      <li><strong>No subbr server sees your messages.</strong> They travel only through the apps you choose, hidden and encrypted.</li>
-      <li><strong>Your key, contacts and chats stay on your phone</strong>, encrypted and locked with your PIN.</li>
-      <li><strong>No analytics, no ads, no tracking.</strong></li>
-      <li>The camera is used only to scan QR codes.</li>
+      <li><strong>Only someone with the password can read your messages.</strong> subbr uses strong, modern encryption (Argon2id and XChaCha20-Poly1305).</li>
+      <li><strong>No internet permission.</strong> subbr can’t send anything anywhere on its own. You can check this on its Google Play page.</li>
+      <li><strong>No account, no phone number, no email.</strong> No access to your contacts, no ads, no analytics, no tracking.</li>
+      <li><strong>Everything stays on your phone, encrypted.</strong> Your friends, passwords and history never leave it. You can also lock subbr with your fingerprint, face or screen lock.</li>
+      <li><strong>The camera is used only to scan QR codes.</strong> Photos and videos are read only when you pick them.</li>
     </ul>
+    <p>An honest note: a careful inspector can tell that something is probably hidden, but without the password they can’t read it.</p>
     <p>A full privacy policy will be published here before subbr is available on Google Play.</p>
   </section>
 
   <section id="trademarks">
     <h2>Trademarks and credits</h2>
     <p>WhatsApp is a trademark of WhatsApp LLC. Telegram is a trademark of Telegram FZ-LLC. Other app names belong to their owners. subbr is not affiliated with, endorsed by or sponsored by any of them. App icons inside subbr are drawn by your own phone; subbr does not ship them.</p>
-    <p>Icons: <a href="https://feathericons.com">Feather</a> (MIT licence) and <a href="https://lucide.dev">Lucide</a> (ISC licence).</p>
+    <p>Icons: <a href="https://feathericons.com">Feather</a> (MIT licence) · <a href="https://lucide.dev">Lucide</a> (ISC licence)</p>
   </section>
 
   <footer>

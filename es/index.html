@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>subbr: esconde un secreto a la vista de todos</title>
+<meta name="description" content="Esconde un mensaje privado dentro de una frase, una foto o un vídeo corriente y envíalo con cualquier app. Solo tu amigo puede revelarlo.">
+<link rel="canonical" href="https://mypttwo.github.io/subbr/es/">
+<link rel="alternate" hreflang="en" href="https://mypttwo.github.io/subbr/">
+<link rel="alternate" hreflang="ar" href="https://mypttwo.github.io/subbr/ar/">
+<link rel="alternate" hreflang="es" href="https://mypttwo.github.io/subbr/es/">
+<link rel="alternate" hreflang="hi" href="https://mypttwo.github.io/subbr/hi/">
+<link rel="alternate" hreflang="id" href="https://mypttwo.github.io/subbr/id/">
+<link rel="alternate" hreflang="x-default" href="https://mypttwo.github.io/subbr/">
+<style>
+  :root { --bg:#0B0A1A; --card:#1A1830; --text:#F4F1FF; --muted:#B9B2D6; --accent:#A78BFA; --line:rgba(255,255,255,.12); }
+  @media (prefers-color-scheme: light) { :root { --bg:#F7F6FB; --card:#FFFFFF; --text:#1B1830; --muted:#5D5878; --accent:#6D4FD8; --line:rgba(0,0,0,.1); } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Arabic","Noto Sans Devanagari",sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:28px 20px 64px; }
+  nav { display:flex; flex-wrap:wrap; gap:6px 16px; font-size:.92rem; margin-bottom:28px; }
+  nav a { color:var(--muted); text-decoration:none; }
+  nav a[aria-current] { color:var(--text); font-weight:700; }
+  .brand { color:var(--accent); font-weight:800; letter-spacing:.08em; margin:0; }
+  h1 { font-size:2.1rem; line-height:1.2; margin:.2em 0 .4em; }
+  h2 { font-size:1.25rem; margin:2.2em 0 .4em; }
+  p, li { color:var(--muted); }
+  strong { color:var(--text); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
+  a { color:var(--accent); }
+  .lead { font-size:1.1rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
+  .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
+  footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <nav><a href="../" hreflang="en" lang="en">English</a> <a href="../ar/" hreflang="ar" lang="ar">العربية</a> <a href="../es/" hreflang="es" lang="es" aria-current="page">Español</a> <a href="../hi/" hreflang="hi" lang="hi">हिन्दी</a> <a href="../id/" hreflang="id" lang="id">Bahasa Indonesia</a></nav>
+  <p class="brand">subbr</p>
+  <h1>Esconde un secreto a la vista de todos.</h1>
+  <p class="lead">subbr esconde un mensaje privado dentro de algo corriente: una frase, una foto o un vídeo corto. Envíalo con la app que quieras. Los demás ven un mensaje normal; solo tu amigo puede revelarlo.</p>
+
+  <div class="grid">
+    <div class="tile">
+      <h3>Texto, fotos y vídeos</h3>
+      <p>Esconde tu mensaje en una frase cotidiana, una foto o un vídeo corto. Las fotos resisten la compresión de WhatsApp.</p>
+    </div>
+    <div class="tile">
+      <h3>Cualquier app</h3>
+      <p>Envíalo por WhatsApp, Telegram, correo o cualquier app que ya uses, o directamente al chat de tu amigo.</p>
+    </div>
+    <div class="tile">
+      <h3>Solo tu amigo puede leerlo</h3>
+      <p>El mensaje se cifra con una contraseña que compartes con tu amigo. Sin ella, nadie puede leerlo.</p>
+    </div>
+  </div>
+
+  <section id="pronounce">
+    <h2>¿Cómo se pronuncia «subbr»?</h2>
+    <p>Se dice <strong>«sáber»</strong> (SUB-er en inglés). Viene de <strong>subliminal</strong>: un mensaje bajo la superficie, ahí para la única persona que debe verlo.</p>
+  </section>
+
+  <section id="how">
+    <h2>Cómo funciona</h2>
+    <ul>
+      <li><strong>Añade a un amigo una vez.</strong> Escaneáis el código QR del otro cuando estáis juntos, o escribís la misma contraseña cuando estáis lejos.</li>
+      <li><strong>Esconde.</strong> Escribe tu secreto, elige al amigo y escóndelo en una frase, una foto o un vídeo.</li>
+      <li><strong>Envía.</strong> Envíalo con cualquier app, o directamente al chat de tu amigo.</li>
+      <li><strong>Revela.</strong> Tu amigo copia el texto, o comparte la foto o el vídeo con subbr, y aparece el secreto.</li>
+    </ul>
+  </section>
+
+  <section id="timers">
+    <h2>Autodestrucción</h2>
+    <p>Muestra un mensaje durante 10 segundos, 30 segundos o un minuto; deja que se abra una sola vez; o haz que caduque tras una hora, un día o una semana.</p>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacidad</h2>
+    <ul>
+      <li><strong>Solo quien tiene la contraseña puede leer tus mensajes.</strong> subbr usa cifrado moderno y fuerte (Argon2id y XChaCha20-Poly1305).</li>
+      <li><strong>Sin permiso de internet.</strong> subbr no puede enviar nada a ninguna parte por sí solo. Puedes comprobarlo en su página de Google Play.</li>
+      <li><strong>Sin cuenta, sin número de teléfono, sin correo.</strong> Sin acceso a tus contactos, sin anuncios, sin analíticas, sin rastreo.</li>
+      <li><strong>Todo se queda en tu teléfono, cifrado.</strong> Tus amigos, contraseñas e historial nunca salen de él. También puedes bloquear subbr con tu huella, tu cara o el bloqueo de pantalla.</li>
+      <li><strong>La cámara solo se usa para escanear códigos QR.</strong> Las fotos y los vídeos solo se leen cuando tú los eliges.</li>
+    </ul>
+    <p>Con sinceridad: un experto atento puede notar que probablemente hay algo escondido, pero sin la contraseña no puede leerlo.</p>
+    <p>Publicaremos aquí una política de privacidad completa antes de que subbr esté disponible en Google Play.</p>
+  </section>
+
+  <section id="trademarks">
+    <h2>Marcas y créditos</h2>
+    <p>WhatsApp es una marca de WhatsApp LLC. Telegram es una marca de Telegram FZ-LLC. Los demás nombres de apps pertenecen a sus dueños. subbr no está afiliado, respaldado ni patrocinado por ninguno de ellos. Los iconos de apps dentro de subbr los dibuja tu propio teléfono; subbr no los incluye.</p>
+    <p>Iconos: <a href="https://feathericons.com">Feather</a> (licencia MIT) · <a href="https://lucide.dev">Lucide</a> (licencia ISC)</p>
+  </section>
+
+  <footer>
+    <p>Preguntas o problemas: <a href="https://github.com/mypttwo/subbr/issues">abre una incidencia en GitHub</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
