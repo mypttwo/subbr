@@ -30,7 +30,8 @@
   section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
   a { color:var(--accent); }
   .lead { font-size:1.1rem; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:28px; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
   .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
   .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
   footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
@@ -56,11 +57,20 @@
       <h3>Solo tu amigo puede leerlo</h3>
       <p>El mensaje se cifra con una contraseña que compartes con tu amigo. Sin ella, nadie puede leerlo.</p>
     </div>
+    <div class="tile">
+      <h3>Mensajes que desaparecen</h3>
+      <p>Muestra un secreto durante 10 segundos, deja que se abra una sola vez, o haz que caduque tras una hora, un día o una semana. Después, subbr ya no puede mostrarlo, en ninguno de los dos móviles.</p>
+    </div>
   </div>
 
-  <section id="pronounce">
-    <h2>¿Cómo se pronuncia «subbr»?</h2>
-    <p>Se dice <strong>«sáber»</strong> (SUB-er en inglés). Viene de <strong>subliminal</strong>: un mensaje bajo la superficie, ahí para la única persona que debe verlo.</p>
+  <section id="who">
+    <h2>Para quién es</h2>
+    <ul>
+      <li><strong>Parejas, amigos y familia</strong> que quieren una línea privada dentro de los chats que ya usan.</li>
+      <li><strong>Cualquiera cuyo móvil o chats puedan mirar otros.</strong> Un mensaje escondido parece uno cotidiano, así que no llama la atención.</li>
+      <li><strong>Diversión:</strong> notas secretas, acertijos, un mensaje escondido en una foto de cumpleaños.</li>
+      <li><strong>Quien prefiere herramientas sencillas y privadas:</strong> subbr funciona sin conexión y no recoge nada.</li>
+    </ul>
   </section>
 
   <section id="how">
@@ -73,22 +83,50 @@
     </ul>
   </section>
 
-  <section id="timers">
-    <h2>Autodestrucción</h2>
-    <p>Muestra un mensaje durante 10 segundos, 30 segundos o un minuto; deja que se abra una sola vez; o haz que caduque tras una hora, un día o una semana.</p>
+  <section id="features">
+    <h2>Funciones</h2>
+    <ul>
+      <li><strong>Texto, fotos y vídeos.</strong> Esconde en una frase cotidiana (lista o tuya), una foto o un vídeo (rápido hasta 15 segundos, o con calidad completa hasta un minuto). Las fotos resisten la compresión de WhatsApp.</li>
+      <li><strong>Mensajes que desaparecen.</strong> 10, 30 o 60 segundos en pantalla, de una sola vez, o con caducidad de una hora, un día o una semana.</li>
+      <li><strong>Recuerda a tus amigos.</strong> Sin escribir contraseñas: los mensajes se revelan solos. Cada amigo tiene un chat con tus últimos 10 mensajes, guardados cifrados.</li>
+      <li><strong>Privado por diseño.</strong> Sin cuenta, sin anuncios, sin rastreo, sin permiso de internet. Si quieres, bloquea subbr con tu huella, tu cara o el bloqueo de pantalla.</li>
+      <li><strong>Cinco idiomas:</strong> inglés, árabe, español, hindi e indonesio.</li>
+    </ul>
+  </section>
+
+  <section id="why">
+    <h2>¿Por qué no un chat secreto?</h2>
+    <ul>
+      <li><strong>Sin un chat secreto aparte.</strong> Nada indica que tienes una conversación privada: el mensaje viaja dentro del chat que ya tienes y parece normal.</li>
+      <li><strong>Mejor que los mensajes temporales.</strong> Esos los puede leer cualquiera que tenga el móvil mientras duran. Un mensaje de subbr no se puede leer sin la contraseña.</li>
+      <li><strong>Más que una app para esconder en fotos.</strong> Texto, fotos y vídeos; recuerda a tus amigos, así nadie escribe contraseñas; y sin anuncios.</li>
+    </ul>
+  </section>
+
+  <section id="price">
+    <h2>Precio</h2>
+    <p>Revelar es siempre gratis. Tus primeros 5 secretos son gratis; después, un desbloqueo único: sin suscripción, sin anuncios.</p>
+  </section>
+
+  <section id="limits">
+    <h2>Límites, con sinceridad</h2>
+    <ul>
+      <li>Tu amigo también necesita subbr, pero recibir y revelar es gratis.</li>
+      <li>Los temporizadores funcionan en subbr, en el móvil de tu amigo. El mensaje escondido sigue en el chat, pero nadie puede leerlo sin la contraseña.</li>
+      <li>Un experto atento puede notar que probablemente hay algo escondido, pero sin la contraseña no puede leerlo.</li>
+      <li>Por ahora, solo para Android.</li>
+    </ul>
   </section>
 
   <section id="privacy">
     <h2>Privacidad</h2>
-    <ul>
-      <li><strong>Solo quien tiene la contraseña puede leer tus mensajes.</strong> subbr usa cifrado moderno y fuerte (Argon2id y XChaCha20-Poly1305).</li>
-      <li><strong>Sin permiso de internet.</strong> subbr no puede enviar nada a ninguna parte por sí solo. Puedes comprobarlo en su página de Google Play.</li>
-      <li><strong>Sin cuenta, sin número de teléfono, sin correo.</strong> Sin acceso a tus contactos, sin anuncios, sin analíticas, sin rastreo.</li>
-      <li><strong>Todo se queda en tu teléfono, cifrado.</strong> Tus amigos, contraseñas e historial nunca salen de él. También puedes bloquear subbr con tu huella, tu cara o el bloqueo de pantalla.</li>
-      <li><strong>La cámara solo se usa para escanear códigos QR o hacer una foto en la que quieras esconder un mensaje.</strong> Las fotos y los vídeos solo se leen cuando tú los eliges.</li>
-    </ul>
-    <p>Con sinceridad: un experto atento puede notar que probablemente hay algo escondido, pero sin la contraseña no puede leerlo.</p>
-    <p>Lee la <a href="privacy.html">política de privacidad</a> completa.</p>
+    <p>Sin cuenta, y nada sale de tu móvil.</p>
+    <p><a href="privacy.html">Lee cómo subbr protege tu privacidad →</a></p>
+  </section>
+
+  <section id="pronounce">
+    <h2>¿Cómo se pronuncia «subbr»?</h2>
+    <p>Se dice <strong>«sáber»</strong> (SUB-er en inglés). Viene de <strong>subliminal</strong>: un mensaje bajo la superficie, ahí para la única persona que debe verlo.</p>
   </section>
 
   <section id="trademarks">

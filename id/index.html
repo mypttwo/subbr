@@ -30,7 +30,8 @@
   section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
   a { color:var(--accent); }
   .lead { font-size:1.1rem; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:28px; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
   .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
   .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
   footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
@@ -56,11 +57,20 @@
       <h3>Hanya temanmu yang bisa membacanya</h3>
       <p>Pesan dienkripsi dengan kata sandi yang kamu bagikan dengan temanmu. Tanpa itu, tak ada yang bisa membacanya.</p>
     </div>
+    <div class="tile">
+      <h3>Pesan yang menghilang</h3>
+      <p>Tampilkan rahasia selama 10 detik, biarkan hanya bisa dibuka sekali, atau buat kedaluwarsa setelah satu jam, satu hari, atau satu minggu. Setelah itu, subbr tak bisa menampilkannya lagi, di ponsel mana pun.</p>
+    </div>
   </div>
 
-  <section id="pronounce">
-    <h2>Bagaimana cara mengucapkan “subbr”?</h2>
-    <p>Ucapkan seperti <strong>“saber”</strong> (SUB-er). Namanya berasal dari <strong>subliminal</strong>: pesan di bawah permukaan, ada untuk satu orang yang memang dituju.</p>
+  <section id="who">
+    <h2>Untuk siapa</h2>
+    <ul>
+      <li><strong>Pasangan, teman, dan keluarga</strong> yang ingin jalur pribadi di dalam chat yang sudah mereka pakai.</li>
+      <li><strong>Siapa pun yang ponsel atau chatnya mungkin dilihat orang lain.</strong> Pesan tersembunyi terlihat seperti pesan biasa, jadi tidak menarik perhatian.</li>
+      <li><strong>Seru-seruan:</strong> catatan rahasia, teka-teki, pesan tersembunyi di foto ulang tahun.</li>
+      <li><strong>Yang suka aplikasi simpel dan privat:</strong> subbr jalan tanpa internet dan tidak mengumpulkan apa pun.</li>
+    </ul>
   </section>
 
   <section id="how">
@@ -73,22 +83,50 @@
     </ul>
   </section>
 
-  <section id="timers">
-    <h2>Penghancur otomatis</h2>
-    <p>Tampilkan pesan selama 10 detik, 30 detik, atau satu menit; biarkan hanya bisa dibuka sekali; atau buat kedaluwarsa setelah satu jam, satu hari, atau satu minggu.</p>
+  <section id="features">
+    <h2>Fitur</h2>
+    <ul>
+      <li><strong>Teks, foto, dan video.</strong> Sembunyikan di kalimat sehari-hari (siap pakai atau buatanmu), foto, atau video (cepat sampai 15 detik, atau kualitas penuh sampai satu menit). Foto tetap utuh meski dikompres WhatsApp.</li>
+      <li><strong>Pesan yang menghilang.</strong> 10, 30, atau 60 detik di layar, sekali buka, atau kedaluwarsa setelah satu jam, satu hari, atau satu minggu.</li>
+      <li><strong>Ingat teman-temanmu.</strong> Tak perlu mengetik kata sandi: pesan terbuka sendiri. Setiap teman punya chat berisi 10 pesan terakhirmu, disimpan terenkripsi.</li>
+      <li><strong>Privat sejak awal.</strong> Tanpa akun, tanpa iklan, tanpa pelacakan, tanpa izin internet. Kalau mau, kunci subbr dengan sidik jari, wajah, atau kunci layar.</li>
+      <li><strong>Lima bahasa:</strong> Inggris, Arab, Spanyol, Hindi, dan Indonesia.</li>
+    </ul>
+  </section>
+
+  <section id="why">
+    <h2>Kenapa tidak pakai chat rahasia saja?</h2>
+    <ul>
+      <li><strong>Tidak ada chat rahasia terpisah.</strong> Tak ada tanda kamu sedang ngobrol pribadi: pesannya lewat chat yang sudah ada dan terlihat biasa.</li>
+      <li><strong>Lebih baik dari pesan sementara.</strong> Pesan itu bisa dibaca siapa pun yang memegang ponsel selama masih ada. Pesan subbr sama sekali tak bisa dibaca tanpa kata sandi.</li>
+      <li><strong>Lebih dari aplikasi penyembunyi foto.</strong> Teks, foto, dan video; ingat teman-temanmu, jadi tak ada yang mengetik kata sandi; dan tanpa iklan.</li>
+    </ul>
+  </section>
+
+  <section id="price">
+    <h2>Harga</h2>
+    <p>Membuka pesan selalu gratis. 5 rahasia pertamamu gratis, lalu buka sekali bayar: tanpa langganan, tanpa iklan.</p>
+  </section>
+
+  <section id="limits">
+    <h2>Batasan, terus terang</h2>
+    <ul>
+      <li>Temanmu juga perlu subbr, tapi menerima dan membuka pesan gratis.</li>
+      <li>Timer berjalan di subbr pada ponsel temanmu. Pesan tersembunyi tetap ada di chat, tapi tak ada yang bisa membacanya tanpa kata sandi.</li>
+      <li>Pemeriksa yang teliti bisa tahu ada sesuatu yang mungkin tersembunyi, tapi tanpa kata sandi tak bisa membacanya.</li>
+      <li>Untuk sekarang hanya Android.</li>
+    </ul>
   </section>
 
   <section id="privacy">
     <h2>Privasi</h2>
-    <ul>
-      <li><strong>Hanya yang punya kata sandi yang bisa membaca pesanmu.</strong> subbr memakai enkripsi modern yang kuat (Argon2id dan XChaCha20-Poly1305).</li>
-      <li><strong>Tanpa izin internet.</strong> subbr tidak bisa mengirim apa pun ke mana pun dengan sendirinya. Kamu bisa memeriksanya di halaman Google Play-nya.</li>
-      <li><strong>Tanpa akun, tanpa nomor telepon, tanpa email.</strong> Tanpa akses ke kontakmu, tanpa iklan, tanpa analitik, tanpa pelacakan.</li>
-      <li><strong>Semuanya tetap di ponselmu, terenkripsi.</strong> Teman, kata sandi, dan riwayatmu tidak pernah keluar dari ponsel. Kamu juga bisa mengunci subbr dengan sidik jari, wajah, atau kunci layar.</li>
-      <li><strong>Kamera hanya dipakai untuk memindai kode QR atau mengambil foto untuk menyembunyikan pesan.</strong> Foto dan video hanya dibaca saat kamu memilihnya.</li>
-    </ul>
-    <p>Terus terang: pemeriksa yang teliti bisa menduga ada sesuatu yang tersembunyi, tetapi tanpa kata sandi ia tidak bisa membacanya.</p>
-    <p>Baca <a href="privacy.html">kebijakan privasi</a> lengkapnya.</p>
+    <p>Tanpa akun, dan tak ada yang keluar dari ponselmu.</p>
+    <p><a href="privacy.html">Baca cara subbr melindungi privasimu →</a></p>
+  </section>
+
+  <section id="pronounce">
+    <h2>Bagaimana cara mengucapkan “subbr”?</h2>
+    <p>Ucapkan seperti <strong>“saber”</strong> (SUB-er). Namanya berasal dari <strong>subliminal</strong>: pesan di bawah permukaan, ada untuk satu orang yang memang dituju.</p>
   </section>
 
   <section id="trademarks">

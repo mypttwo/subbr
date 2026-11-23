@@ -30,7 +30,8 @@
   section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 22px 14px; margin-top:20px; }
   a { color:var(--accent); }
   .lead { font-size:1.1rem; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:28px; }
+  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:28px; }
+  @media (max-width:560px) { .grid { grid-template-columns:1fr; } }
   .tile { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:4px 18px 10px; }
   .tile h3 { margin:.9em 0 .2em; font-size:1.05rem; color:var(--accent); }
   footer { margin-top:40px; font-size:.9rem; color:var(--muted); }
@@ -56,11 +57,20 @@
       <h3>Only your friend can read it</h3>
       <p>The message is encrypted with a password you share with your friend. Without it, no one can read it.</p>
     </div>
+    <div class="tile">
+      <h3>Messages that disappear</h3>
+      <p>Show a secret for 10 seconds, let it open only once, or make it expire after an hour, a day or a week. After that, subbr can’t show it again, on either phone.</p>
+    </div>
   </div>
 
-  <section id="pronounce">
-    <h2>How do you say “subbr”?</h2>
-    <p>Say it like <strong>“subber”</strong> (SUB-er). It comes from <strong>subliminal</strong>: a message that sits under the surface, there for the one person meant to see it.</p>
+  <section id="who">
+    <h2>Who it’s for</h2>
+    <ul>
+      <li><strong>Couples, friends and family</strong> who want a private line inside the chats they already use.</li>
+      <li><strong>Anyone whose phone or chats others might look at.</strong> A hidden message looks like an everyday one, so it draws no attention.</li>
+      <li><strong>Fun:</strong> secret notes, puzzles, a hidden message in a birthday photo.</li>
+      <li><strong>People who like simple, private tools:</strong> subbr works offline and collects nothing.</li>
+    </ul>
   </section>
 
   <section id="how">
@@ -73,22 +83,50 @@
     </ul>
   </section>
 
-  <section id="timers">
-    <h2>Self-destruct timers</h2>
-    <p>Show a message for 10 seconds, 30 seconds or a minute; let it open only once; or make it expire after an hour, a day or a week.</p>
+  <section id="features">
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Text, photos and videos.</strong> Hide in an everyday cover sentence (ready-made or your own), a photo, or a video (quick up to 15 seconds, or full quality up to a minute). Photos survive WhatsApp’s compression.</li>
+      <li><strong>Disappearing messages.</strong> 10, 30 or 60 seconds on screen, open once, or expire after an hour, a day or a week.</li>
+      <li><strong>Remembers your friends.</strong> No typing passwords: messages reveal by themselves. Each friend has a chat with your last 10 messages, stored encrypted.</li>
+      <li><strong>Private by design.</strong> No account, no ads, no tracking, no internet permission. Lock subbr with your fingerprint, face or screen lock if you like.</li>
+      <li><strong>Five languages:</strong> English, Arabic, Spanish, Hindi and Indonesian.</li>
+    </ul>
+  </section>
+
+  <section id="why">
+    <h2>Why not just a secret chat?</h2>
+    <ul>
+      <li><strong>No separate secret chat.</strong> Nothing shows that you’re having a private conversation: the message travels inside the chat you already have and looks ordinary.</li>
+      <li><strong>Better than disappearing messages.</strong> Those can be read by anyone holding the phone while they last. A subbr message can’t be read at all without the password.</li>
+      <li><strong>More than a photo-hiding app.</strong> Text, photos and videos; friends remembered, so no one types passwords; and no ads.</li>
+    </ul>
+  </section>
+
+  <section id="price">
+    <h2>Price</h2>
+    <p>Revealing is always free. Your first 5 secrets are free, then a one-time unlock: no subscription, no ads.</p>
+  </section>
+
+  <section id="limits">
+    <h2>Honest limits</h2>
+    <ul>
+      <li>Your friend needs subbr too, but receiving and revealing are free.</li>
+      <li>Timers run in subbr on your friend’s phone. The hidden message stays in the chat, but no one can read it without the password.</li>
+      <li>A careful inspector can tell that something is probably hidden, but without the password they can’t read it.</li>
+      <li>Android only for now.</li>
+    </ul>
   </section>
 
   <section id="privacy">
     <h2>Privacy</h2>
-    <ul>
-      <li><strong>Only someone with the password can read your messages.</strong> subbr uses strong, modern encryption (Argon2id and XChaCha20-Poly1305).</li>
-      <li><strong>No internet permission.</strong> subbr can’t send anything anywhere on its own. You can check this on its Google Play page.</li>
-      <li><strong>No account, no phone number, no email.</strong> No access to your contacts, no ads, no analytics, no tracking.</li>
-      <li><strong>Everything stays on your phone, encrypted.</strong> Your friends, passwords and history never leave it. You can also lock subbr with your fingerprint, face or screen lock.</li>
-      <li><strong>The camera is used only to scan QR codes, or to take a photo you want to hide a message in.</strong> Photos and videos are read only when you pick them.</li>
-    </ul>
-    <p>An honest note: a careful inspector can tell that something is probably hidden, but without the password they can’t read it.</p>
-    <p>Read the full <a href="privacy.html">privacy policy</a>.</p>
+    <p>No account, and nothing leaves your phone.</p>
+    <p><a href="privacy.html">Read how subbr protects your privacy →</a></p>
+  </section>
+
+  <section id="pronounce">
+    <h2>How do you say “subbr”?</h2>
+    <p>Say it like <strong>“subber”</strong> (SUB-er). It comes from <strong>subliminal</strong>: a message that sits under the surface, there for the one person meant to see it.</p>
   </section>
 
   <section id="trademarks">
