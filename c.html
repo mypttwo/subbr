@@ -36,8 +36,9 @@
   if (!/^[A-Za-z0-9._~%:-]{1,600}$/.test(card)) return;
   var referrer = 'utm_source=invite&utm_medium=link&utm_content=' + card;
   var play = 'https://play.google.com/store/apps/details?id=com.subbr.app&referrer=' + encodeURIComponent(referrer);
-  var intent = 'intent://mypttwo.github.io/subbr/c#Intent;scheme=https;package=com.subbr.app;S.subbr_card=' + encodeURIComponent(card) +
-    ';S.browser_fallback_url=' + encodeURIComponent(play) + ';end';
+  // The card rides in "?k=" here: this intent goes to the app only, never to a server.
+  var intent = 'intent://mypttwo.github.io/subbr/c?k=' + encodeURIComponent(card) +
+    '#Intent;scheme=https;package=com.subbr.app;S.browser_fallback_url=' + encodeURIComponent(play) + ';end';
   var go = document.getElementById('go');
   go.href = /Android/i.test(navigator.userAgent) ? intent : play;
   try {
