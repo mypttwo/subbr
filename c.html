@@ -27,13 +27,13 @@
   <p><small>Nothing in this link is sent to this website: it stays on your phone.</small></p>
 </main>
 <script>
-// The invite after "#" (the inviter's public key and name) never reaches the server.
+// The invite after "#" (the inviter's public keys and name) never reaches the server.
 // subbr opens it directly when installed (Android App Link). This page is the fallback:
 // open subbr through an intent, or, if it isn't installed, the Play Store, which hands
 // the invite to the app after install (Install Referrer).
 (function () {
   var card = location.hash.slice(1);
-  if (!/^[A-Za-z0-9._~%:-]{1,600}$/.test(card)) return;
+  if (!/^[A-Za-z0-9._~%:-]{1,4000}$/.test(card)) return;
   var referrer = 'utm_source=invite&utm_medium=link&utm_content=' + card;
   var play = 'https://play.google.com/store/apps/details?id=com.subbr.app&referrer=' + encodeURIComponent(referrer);
   // The card rides in "?k=" here: this intent goes to the app only, never to a server.
@@ -42,7 +42,7 @@
   var go = document.getElementById('go');
   go.href = /Android/i.test(navigator.userAgent) ? intent : play;
   try {
-    var name = decodeURIComponent(card.split(':')[2] || '');
+    var name = decodeURIComponent(card.split(':')[3] || '');
     if (name) document.getElementById('title').textContent = name + ' wants to send you secret messages';
   } catch (e) {}
 })();
