@@ -34,8 +34,8 @@
 (function () {
   var card = location.hash.slice(1);
   if (!/^[A-Za-z0-9._~%:-]{1,2000}$/.test(card)) return;
-  // Play gets the short part only (type, public key, name); a long card's post-quantum key is
-  // then exchanged in the first messages instead.
+  // Up to 2,000 characters: the post-quantum exchange texts (q1/q1r) use this page too.
+  // Play gets the first three fields only (type, public key, name).
   var referrer = 'utm_source=invite&utm_medium=link&utm_content=' + card.split(':').slice(0, 3).join(':');
   var play = 'https://play.google.com/store/apps/details?id=com.subbr.app&referrer=' + encodeURIComponent(referrer);
   // The card rides in "?k=" here: this intent goes to the app only, never to a server.
