@@ -33,8 +33,10 @@
 // the invite to the app after install (Install Referrer).
 (function () {
   var card = location.hash.slice(1);
-  if (!/^[A-Za-z0-9._~%:-]{1,400}$/.test(card)) return;
-  var referrer = 'utm_source=invite&utm_medium=link&utm_content=' + card;
+  if (!/^[A-Za-z0-9._~%:-]{1,2000}$/.test(card)) return;
+  // Play gets the short part only (type, public key, name); a long card's post-quantum key is
+  // then exchanged in the first messages instead.
+  var referrer = 'utm_source=invite&utm_medium=link&utm_content=' + card.split(':').slice(0, 3).join(':');
   var play = 'https://play.google.com/store/apps/details?id=com.subbr.app&referrer=' + encodeURIComponent(referrer);
   // The card rides in "?k=" here: this intent goes to the app only, never to a server.
   var intent = 'intent://mypttwo.github.io/subbr/c?k=' + encodeURIComponent(card) +
