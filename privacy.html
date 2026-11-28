@@ -41,7 +41,7 @@
   <p class="brand"><a href="./" style="color:inherit;text-decoration:none">← subbr</a></p>
   <h1>subbr privacy policy</h1>
   <p>Last updated: 21 November 2026</p>
-  <p class="lead">subbr is an Android app made by <strong>Mypt</strong> (“we”). This policy explains what happens to your information when you use it. The short version: <strong>subbr collects nothing.</strong> It has no internet permission, so it can’t send anything anywhere, and we never see your messages, friends or passwords.</p>
+  <p class="lead">subbr is an Android app made by <strong>Mypt</strong> (“we”). This policy explains what happens to your information when you use it. The short version: <strong>subbr collects nothing.</strong> It has no internet permission, so it can’t send anything anywhere, and we never see your messages, friends or keys.</p>
 
   <section>
     <h2>What we collect</h2>
@@ -50,7 +50,7 @@
   <section>
     <h2>What stays on your phone</h2>
     <p>To work, subbr keeps the following on your phone, encrypted:</p>
-    <ul><li>the name you choose for yourself;</li><li>your friends: the names, notes and optional contact details (such as a WhatsApp number, Telegram username or email address) that you type in, and the password you share with each friend;</li><li>your history: the last 10 messages with each friend, with small previews of photos and videos. Messages set to self-destruct leave no text behind;</li><li>your settings, and whether you have bought Unlimited secrets.</li></ul>
+    <ul><li>the name you choose for yourself;</li><li>your friends: the names, notes and optional contact details (such as a WhatsApp number, Telegram username or email address) that you type in, and the secret key subbr makes for each friend;</li><li>your history: the last 10 messages with each friend, with small previews of photos and videos. Messages set to self-destruct leave no text behind;</li><li>your settings, and whether you have bought Unlimited secrets.</li></ul>
     <p>None of this leaves your phone. subbr is left out of Android backups, so it isn’t copied to Google Drive or to a new phone either. This also means we can’t recover it for you.</p>
   </section>
   <section>
@@ -59,8 +59,8 @@
   </section>
   <section>
     <h2>Messages you send</h2>
-    <p>You send hidden messages with apps you already use, such as WhatsApp, Telegram or email. Those apps carry them under their own privacy policies, and what they see is an ordinary sentence, photo or video, not your secret. The secret is encrypted with the password you share with your friend (Argon2id and XChaCha20-Poly1305), and only someone with that password can read it.</p>
-    <p>An honest note: a careful inspector can tell that something is probably hidden, but without the password they can’t read it.</p>
+    <p>You send hidden messages with apps you already use, such as WhatsApp, Telegram or email. Those apps carry them under their own privacy policies, and what they see is an ordinary sentence, photo or video, not your secret. The secret is encrypted with a key that only your phone and your friend’s phone have (XChaCha20-Poly1305, with keys agreed by X25519 and, once you both tap the shield, post-quantum ML-KEM-768; friends who scan each other’s QR code get a random key that never travels). Only someone with that key can read it.</p>
+    <p>An honest note: a careful inspector can tell that something is probably hidden, but without the key they can’t read it.</p>
   </section>
   <section>
     <h2>Purchases</h2>

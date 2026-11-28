@@ -41,7 +41,7 @@
   <p class="brand"><a href="./" style="color:inherit;text-decoration:none">← subbr</a></p>
   <h1>Kebijakan privasi subbr</h1>
   <p>Terakhir diperbarui: 21 November 2026</p>
-  <p class="lead">subbr adalah aplikasi Android buatan <strong>Mypt</strong> (“kami”). Kebijakan ini menjelaskan apa yang terjadi pada informasimu saat kamu memakainya. Singkatnya: <strong>subbr tidak mengumpulkan apa pun.</strong> subbr tidak punya izin internet, jadi tidak bisa mengirim apa pun ke mana pun, dan kami tidak pernah melihat pesan, teman, atau kata sandimu.</p>
+  <p class="lead">subbr adalah aplikasi Android buatan <strong>Mypt</strong> (“kami”). Kebijakan ini menjelaskan apa yang terjadi pada informasimu saat kamu memakainya. Singkatnya: <strong>subbr tidak mengumpulkan apa pun.</strong> subbr tidak punya izin internet, jadi tidak bisa mengirim apa pun ke mana pun, dan kami tidak pernah melihat pesan, teman, atau kuncimu.</p>
 
   <section>
     <h2>Apa yang kami kumpulkan</h2>
@@ -50,7 +50,7 @@
   <section>
     <h2>Apa yang tetap di ponselmu</h2>
     <p>Agar bisa bekerja, subbr menyimpan hal berikut di ponselmu, terenkripsi:</p>
-    <ul><li>nama yang kamu pilih untuk dirimu;</li><li>temanmu: nama, catatan, dan info kontak opsional (seperti nomor WhatsApp, nama pengguna Telegram, atau alamat email) yang kamu ketik, serta kata sandi yang kamu bagikan dengan tiap teman;</li><li>riwayatmu: 10 pesan terakhir dengan tiap teman, dengan pratinjau kecil foto dan video. Pesan yang hancur otomatis tidak meninggalkan teks;</li><li>pengaturanmu, dan apakah kamu sudah membeli Rahasia tanpa batas.</li></ul>
+    <ul><li>nama yang kamu pilih untuk dirimu;</li><li>temanmu: nama, catatan, dan info kontak opsional (seperti nomor WhatsApp, nama pengguna Telegram, atau alamat email) yang kamu ketik, serta kunci rahasia yang dibuat subbr untuk tiap teman;</li><li>riwayatmu: 10 pesan terakhir dengan tiap teman, dengan pratinjau kecil foto dan video. Pesan yang hancur otomatis tidak meninggalkan teks;</li><li>pengaturanmu, dan apakah kamu sudah membeli Rahasia tanpa batas.</li></ul>
     <p>Semua itu tidak pernah keluar dari ponselmu. subbr dikecualikan dari cadangan Android, jadi tidak disalin ke Google Drive atau ke ponsel baru. Artinya, kami juga tidak bisa memulihkannya untukmu.</p>
   </section>
   <section>
@@ -59,8 +59,8 @@
   </section>
   <section>
     <h2>Pesan yang kamu kirim</h2>
-    <p>Kamu mengirim pesan tersembunyi lewat aplikasi yang sudah kamu pakai, seperti WhatsApp, Telegram, atau email. Aplikasi itu mengirimkannya menurut kebijakan privasi masing-masing, dan yang mereka lihat adalah kalimat, foto, atau video biasa, bukan rahasiamu. Rahasia dienkripsi dengan kata sandi yang kamu bagikan dengan temanmu (Argon2id dan XChaCha20-Poly1305), dan hanya yang punya kata sandi itu yang bisa membacanya.</p>
-    <p>Terus terang: pemeriksa yang teliti bisa menduga ada sesuatu yang tersembunyi, tetapi tanpa kata sandi ia tidak bisa membacanya.</p>
+    <p>Kamu mengirim pesan tersembunyi lewat aplikasi yang sudah kamu pakai, seperti WhatsApp, Telegram, atau email. Aplikasi itu mengirimkannya menurut kebijakan privasi masing-masing, dan yang mereka lihat adalah kalimat, foto, atau video biasa, bukan rahasiamu. Rahasia dienkripsi dengan kunci yang hanya ada di ponselmu dan ponsel temanmu (XChaCha20-Poly1305, dengan kunci yang disepakati lewat X25519 dan, setelah kalian berdua mengetuk perisai, ML-KEM-768 pascakuantum; teman yang saling memindai kode QR mendapat kunci acak yang tak pernah dikirim ke mana pun). Hanya yang punya kunci itu yang bisa membacanya.</p>
+    <p>Terus terang: pemeriksa yang teliti bisa menduga ada sesuatu yang tersembunyi, tetapi tanpa kuncinya ia tidak bisa membacanya.</p>
   </section>
   <section>
     <h2>Pembelian</h2>

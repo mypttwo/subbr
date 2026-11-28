@@ -41,7 +41,7 @@
   <p class="brand"><a href="./" style="color:inherit;text-decoration:none">← subbr</a></p>
   <h1>Política de privacidad de subbr</h1>
   <p>Última actualización: 21 de noviembre de 2026</p>
-  <p class="lead">subbr es una app para Android creada por <strong>Mypt</strong> («nosotros»). Esta política explica qué pasa con tu información cuando la usas. En pocas palabras: <strong>subbr no recopila nada.</strong> No tiene permiso de internet, así que no puede enviar nada a ningún sitio, y nunca vemos tus mensajes, tus amigos ni tus contraseñas.</p>
+  <p class="lead">subbr es una app para Android creada por <strong>Mypt</strong> («nosotros»). Esta política explica qué pasa con tu información cuando la usas. En pocas palabras: <strong>subbr no recopila nada.</strong> No tiene permiso de internet, así que no puede enviar nada a ningún sitio, y nunca vemos tus mensajes, tus amigos ni tus claves.</p>
 
   <section>
     <h2>Qué recopilamos</h2>
@@ -50,7 +50,7 @@
   <section>
     <h2>Qué se queda en tu teléfono</h2>
     <p>Para funcionar, subbr guarda lo siguiente en tu teléfono, cifrado:</p>
-    <ul><li>el nombre que eliges para ti;</li><li>tus amigos: los nombres, notas y datos de contacto opcionales (como un número de WhatsApp, un usuario de Telegram o un correo electrónico) que escribes, y la contraseña que compartes con cada amigo;</li><li>tu historial: los últimos 10 mensajes con cada amigo, con pequeñas vistas previas de fotos y vídeos. Los mensajes que se autodestruyen no dejan texto;</li><li>tus ajustes, y si has comprado Secretos ilimitados.</li></ul>
+    <ul><li>el nombre que eliges para ti;</li><li>tus amigos: los nombres, notas y datos de contacto opcionales (como un número de WhatsApp, un usuario de Telegram o un correo electrónico) que escribes, y la clave secreta que subbr crea para cada amigo;</li><li>tu historial: los últimos 10 mensajes con cada amigo, con pequeñas vistas previas de fotos y vídeos. Los mensajes que se autodestruyen no dejan texto;</li><li>tus ajustes, y si has comprado Secretos ilimitados.</li></ul>
     <p>Nada de esto sale de tu teléfono. subbr queda fuera de las copias de seguridad de Android, así que tampoco se copia a Google Drive ni a un teléfono nuevo. Esto también significa que no podemos recuperarlo por ti.</p>
   </section>
   <section>
@@ -59,8 +59,8 @@
   </section>
   <section>
     <h2>Los mensajes que envías</h2>
-    <p>Envías los mensajes ocultos con apps que ya usas, como WhatsApp, Telegram o el correo. Esas apps los transportan según sus propias políticas de privacidad, y lo que ven es una frase, foto o vídeo normal, no tu secreto. El secreto se cifra con la contraseña que compartes con tu amigo (Argon2id y XChaCha20-Poly1305), y solo quien tenga esa contraseña puede leerlo.</p>
-    <p>Una nota sincera: un examen cuidadoso puede notar que probablemente hay algo escondido, pero sin la contraseña no se puede leer.</p>
+    <p>Envías los mensajes ocultos con apps que ya usas, como WhatsApp, Telegram o el correo. Esas apps los transportan según sus propias políticas de privacidad, y lo que ven es una frase, foto o vídeo normal, no tu secreto. El secreto se cifra con una clave que solo tienen tu móvil y el de tu amigo (XChaCha20-Poly1305, con claves acordadas mediante X25519 y, cuando ambos tocáis el escudo, ML-KEM-768 poscuántico; los amigos que escanean el código QR del otro reciben una clave aleatoria que nunca viaja). Solo quien tenga esa clave puede leerlo.</p>
+    <p>Una nota sincera: un examen cuidadoso puede notar que probablemente hay algo escondido, pero sin la clave no se puede leer.</p>
   </section>
   <section>
     <h2>Compras</h2>
